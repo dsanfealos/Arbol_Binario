@@ -30,12 +30,12 @@ public class Tree<T extends Comparable<T>>{
         return !isLeaf(node);
     }
 
-    public Node<T> add(Node<T> origen, T elemento) {
+    public Node<T> add(Node<T> origen, T element) {
 
         Node<T> node = null;
         //Si el root es nulo, lo añade el primero
         if (root == null) {
-            node = new Node<>(elemento);
+            node = new Node<>(element);
             root = node;
         } else if (origen == null) { //el parametro pasado es invalido
             System.out.println("El origen es nulo");
@@ -43,14 +43,14 @@ public class Tree<T extends Comparable<T>>{
 
             //Comparamos los elementos
             //Si el nodo del origen es mayor que el elemento pasado, pasa a la izquierda
-            if (origen.getElement().compareTo(elemento) > 0) {
+            if (origen.getElement().compareTo(element) > 0) {
 
                 //Si tiene nodo izquierdo, hago la llamada recursiva
                 if (origen.getLeft() != null) {
-                    node = add(origen.getLeft(), elemento);
+                    node = add(origen.getLeft(), element);
                 } else {
                     //Creo el nodo
-                    node = new Node<>(elemento);
+                    node = new Node<>(element);
                     //Indico que el padre del nodo creado
                     node.setParent(origen);
                     //Indico que el nodo es el nodo izquierdo del origen
@@ -61,10 +61,10 @@ public class Tree<T extends Comparable<T>>{
 
                 //Si tiene nodo derecho, hago la llamada recursiva
                 if (origen.getRight() != null) {
-                    node = add(origen.getRight(), elemento);
+                    node = add(origen.getRight(), element);
                 } else {
                     //Creo el nodo
-                    node = new Node<>(elemento);
+                    node = new Node<>(element);
                     //Indico que el padre del nodo creado
                     node.setParent(origen);
                     //Indico que el nodo es el nodo izquierdo del origen
@@ -327,5 +327,29 @@ public class Tree<T extends Comparable<T>>{
             elements.add(auxiliar.getElement());
         }
         return elements;
+    }
+
+    public void show(Node<T> node){
+
+        String edgeLeft = (node.getRight() != null) ? "├──" : "└──";
+        String edgeRight = "└──";
+        if (node == this.root) System.out.print("   ");
+        System.out.println(" " + node.getElement().toString());
+
+        if (node.getLeft() != null){
+            for (int i = 0; i < depthTree(node.getLeft()); i++){
+                System.out.print("    ");
+            }
+            System.out.print(edgeLeft);
+            show(node.getLeft());
+        }
+
+        if (node.getRight() != null){
+            for (int i = 0; i < depthTree(node.getRight()); i++){
+                System.out.print("    ");
+            }
+            System.out.print(edgeRight);
+            show(node.getRight());
+        }
     }
 }

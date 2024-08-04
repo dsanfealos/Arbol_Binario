@@ -19,6 +19,8 @@ public class Main {
         testTree.add(15);
         Node<Integer> t3 = testTree.add(13);
 
+        testTree.show(testTree.getRoot());
+
         System.out.println("INORDER: ");
         testTree.triggerInorder();
         System.out.println(" ");
@@ -48,6 +50,10 @@ public class Main {
 
         Integer element = testTree.getElement(node, 12);
         System.out.println("Get element: " + element);
+
+        System.out.println("----------------------------");
+
+        testTree.show(testTree.getRoot());
 
 
     }
