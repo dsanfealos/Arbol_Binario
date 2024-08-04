@@ -1,10 +1,10 @@
-public class NodoArbol<T extends Comparable<T>> {
+public class Node<T extends Comparable<T>> {
     private T element;
-    private NodoArbol<T> parent;
-    private NodoArbol<T> left;
-    private NodoArbol<T> right;
+    private Node<T> parent;
+    private Node<T> left;
+    private Node<T> right;
 
-    public NodoArbol (T element){
+    public Node(T element){
         this.element = element;
         this.parent = null;
         this.left = null;
@@ -19,27 +19,27 @@ public class NodoArbol<T extends Comparable<T>> {
         this.element = element;
     }
 
-    public NodoArbol<T> getParent() {
+    public Node<T> getParent() {
         return parent;
     }
 
-    public void setParent(NodoArbol<T> parent) {
+    public void setParent(Node<T> parent) {
         this.parent = parent;
     }
 
-    public NodoArbol<T> getLeft() {
+    public Node<T> getLeft() {
         return left;
     }
 
-    public void setLeft(NodoArbol<T> left) {
+    public void setLeft(Node<T> left) {
         this.left = left;
     }
 
-    public NodoArbol<T> getRight() {
+    public Node<T> getRight() {
         return right;
     }
 
-    public void setRight(NodoArbol<T> right) {
+    public void setRight(Node<T> right) {
         this.right = right;
     }
 
