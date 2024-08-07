@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Arbol_Binario.iml" filepath="$PROJECT_DIR$/Arbol_Binario.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Binary_Search_Tree.iml" filepath="$PROJECT_DIR$/Binary_Search_Tree.iml" />
     </modules>
   </component>
 </project>

@@ -43,7 +43,7 @@ public class Main {
 
         testTree.inorder(testTree.getRoot());
 
-        //Mostrar
+        //Show
         System.out.println("-------------");
         Node<Integer> node = testTree.getNode(testTree.getRoot(), 12);
         System.out.println("Get node: " + node.getElement());

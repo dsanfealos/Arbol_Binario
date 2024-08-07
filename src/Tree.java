@@ -230,7 +230,6 @@ public class Tree<T extends Comparable<T>>{
             case NODE_LEFT -> next = node.getLeft();
             case NODE_RIGHT -> next = minSubTree(node.getRight());
             case TWO_NODES -> {
-                //Relaciones del hijo al padre
                 next = minSubTree(node.getRight());
                 if (!isRoot(next.getParent())) {
                     node.getLeft().setParent(next);
@@ -248,7 +247,6 @@ public class Tree<T extends Comparable<T>>{
             }
         }
 
-        //Relaciones del padre del anterior nodo al next hijo (nuevo nodo)
         next.setParent(node.getParent());
         if (!isRoot(node)){
             if (node.getParent().getLeft() == node){
